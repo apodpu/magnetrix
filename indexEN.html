@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnetrix Game: escape the factory with a magnet</title>
+<meta name="description" content="Pull, push and park crates on plates to open the gate. 39 hand-built levels, polar crates, spikes, patrols and one-way tiles. No ads, plays offline.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Magnetrix Game: escape the factory with a magnet">
+<meta property="og:description" content="Pull, push and park crates on plates to open the gate. 39 hand-built levels, polar crates, spikes, patrols and one-way tiles. No ads, plays offline.">
+<meta name="theme-color" content="#0b1020">
+<link rel="alternate" hreflang="tr" href="../tr/">
+<style>
+:root{--bg1:#0b1020;--bg2:#151c31;--panel:rgba(255,255,255,.06);--line:rgba(255,255,255,.13);--text:#f3f5fb;--dim:#b4bccf;--accent:#ffc242;--teal:#40e0cd;--red:#f24d4d;--blue:#4594ff;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.65 ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;min-height:100vh}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);background:rgba(11,16,32,.78);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:16px;min-height:60px}
+.brand{font-weight:800;color:var(--text);text-decoration:none;letter-spacing:.2px;display:flex;align-items:center;gap:10px}
+.brand svg{width:26px;height:26px}
+nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+nav a{color:var(--dim);text-decoration:none;padding:8px 12px;border-radius:999px;font-weight:600;font-size:15px}
+nav a:hover{color:var(--text);background:var(--panel)}
+nav a.lang{border:1px solid var(--line);color:var(--text)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:56px 0 40px}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:1.6px;font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:10px 0 16px;font-weight:800}
+.lead{font-size:19px;color:var(--dim);margin:0 0 22px;max-width:46ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--panel);padding:6px 12px;border-radius:999px;font-size:14px;font-weight:700;color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--accent),#ff9a33);color:#1a1405;font-weight:800;text-decoration:none;padding:14px 26px;border-radius:999px;box-shadow:0 8px 28px rgba(255,194,66,.28)}
+.btn[aria-disabled="true"]{cursor:default;opacity:.92}
+.note{color:var(--dim);font-size:14px;margin-top:12px}
+.art{border-radius:22px;border:1px solid var(--line);background:#0e1426;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.art svg{display:block;width:100%;height:auto}
+section{padding:44px 0}
+h2{font-size:clamp(26px,3.6vw,36px);margin:0 0 8px;font-weight:800}
+.sub{color:var(--dim);margin:0 0 26px;max-width:62ch}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--dim);font-size:15.5px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px 20px 20px 66px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:18px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#1a1405;font-weight:800;display:grid;place-items:center}
+.steps b{display:block;margin-bottom:2px}
+.steps span{color:var(--dim);font-size:15.5px}
+.band{background:linear-gradient(90deg,rgba(64,224,205,.12),rgba(69,148,255,.12));border:1px solid var(--line);border-radius:20px;padding:22px 24px}
+.band p{margin:0}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.price .card.hl{border-color:rgba(255,194,66,.6);background:rgba(255,194,66,.08)}
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:0 0 10px}
+summary{cursor:pointer;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--accent);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--dim)}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:28px 0 44px;color:var(--dim);font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
+footer a{color:var(--dim)}
+.doc{max-width:760px;margin:0 auto;padding:44px 20px 20px}
+.doc h1{font-size:clamp(30px,4.6vw,44px);margin:6px 0 8px}
+.doc h2{font-size:22px;margin:34px 0 8px}
+.doc p,.doc li{color:#dfe4f1}
+.doc ul{padding-left:22px}
+.upd{color:var(--dim);font-size:14.5px;margin:0 0 20px}
+.sum{background:rgba(64,224,205,.1);border:1px solid rgba(64,224,205,.4);border-radius:16px;padding:16px 20px;margin:18px 0}
+.sum p{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--accent);font-size:13px;letter-spacing:.8px;text-transform:uppercase}
+.pick{display:grid;place-items:center;min-height:100vh;text-align:center;padding:24px}
+.pick .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-top:34px}.grid,.steps{grid-template-columns:1fr}.price{grid-template-columns:1fr}}
+@media (max-width:520px){nav a:not(.lang):not(.keep){display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 36V30a20 20 0 0 1 40 0v6" fill="none" stroke="#c7cde0" stroke-width="11"/><rect x="6.5" y="34" width="11" height="14" fill="#c7cde0"/><rect x="46.5" y="34" width="11" height="14" fill="#c7cde0"/><rect x="6.5" y="46" width="11" height="12" rx="2" fill="#f24d4d"/><rect x="46.5" y="46" width="11" height="12" rx="2" fill="#4594ff"/></svg><span>Magnetrix Game</span></a>
+<nav aria-label="Main menu"><a href="#how">How to play</a><a href="#features">Features</a><a href="#faq">FAQ</a><a href="#support">Support</a><a class="lang keep" href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+</div></header>
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<div>
+<div class="eyebrow">Magnet puzzle game</div>
+<h1>Escape the factory with a magnet</h1>
+<p class="lead">Use your robot’s magnet to pull crates toward you or push them away. Park them on the plates, open the gate and reach the exit. A calm but demanding single-screen puzzle.</p>
+<ul class="chips"><li>39 hand-built levels</li><li>No ads</li><li>Plays offline</li><li>English & Turkish</li></ul>
+<!-- Yayınlanınca / When live: bu düğmeyi Apple'ın resmi "App Store" rozetiyle ve gerçek bağlantıyla değiştir. Replace this button with Apple's official App Store badge and your link. -->
+<a class="btn" href="#" aria-disabled="true">Coming soon to the App Store</a>
+<p class="note">For iPhone, played in landscape.</p>
+</div>
+<div class="art"><svg viewBox="0 0 400 240" role="img" aria-label="A scene from the game: the robot pushes a crate onto a plate with its magnet; the gate and exit are on the right."><defs><linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#434c61"/><stop offset="1" stop-color="#2d3445"/></linearGradient><linearGradient id="gx" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#40e0cd"/><stop offset="1" stop-color="#4594ff"/></linearGradient><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c7cde0"/><stop offset="1" stop-color="#7f8aa3"/></linearGradient></defs><rect x="20" y="20" width="40" height="40" fill="url(#gw)"/><rect x="60" y="20" width="40" height="40" fill="url(#gw)"/><rect x="100" y="20" width="40" height="40" fill="url(#gw)"/><rect x="140" y="20" width="40" height="40" fill="url(#gw)"/><rect x="180" y="20" width="40" height="40" fill="url(#gw)"/><rect x="220" y="20" width="40" height="40" fill="url(#gw)"/><rect x="260" y="20" width="40" height="40" fill="url(#gw)"/><rect x="300" y="20" width="40" height="40" fill="url(#gw)"/><rect x="340" y="20" width="40" height="40" fill="url(#gw)"/><rect x="20" y="60" width="40" height="40" fill="url(#gw)"/><rect x="60" y="60" width="40" height="40" fill="#1e2538"/><rect x="100" y="60" width="40" height="40" fill="#232b41"/><rect x="140" y="60" width="40" height="40" fill="#1e2538"/><rect x="180" y="60" width="40" height="40" fill="#232b41"/><rect x="220" y="60" width="40" height="40" fill="#1e2538"/><rect x="260" y="60" width="40" height="40" fill="#232b41"/><rect x="300" y="60" width="40" height="40" fill="#1e2538"/><rect x="340" y="60" width="40" height="40" fill="url(#gw)"/><rect x="20" y="100" width="40" height="40" fill="url(#gw)"/><rect x="60" y="100" width="40" height="40" fill="#232b41"/><rect x="100" y="100" width="40" height="40" fill="url(#gw)"/><rect x="140" y="100" width="40" height="40" fill="url(#gw)"/><rect x="180" y="100" width="40" height="40" fill="url(#gw)"/><rect x="220" y="100" width="40" height="40" fill="url(#gw)"/><rect x="260" y="100" width="40" height="40" fill="url(#gw)"/><rect x="300" y="100" width="40" height="40" fill="#232b41"/><rect x="340" y="100" width="40" height="40" fill="url(#gw)"/><rect x="20" y="140" width="40" height="40" fill="url(#gw)"/><rect x="60" y="140" width="40" height="40" fill="#1e2538"/><rect x="100" y="140" width="40" height="40" fill="#232b41"/><rect x="140" y="140" width="40" height="40" fill="#1e2538"/><rect x="180" y="140" width="40" height="40" fill="#232b41"/><rect x="220" y="140" width="40" height="40" fill="#1e2538"/><rect x="260" y="140" width="40" height="40" fill="url(#gw)"/><rect x="300" y="140" width="40" height="40" fill="#1e2538"/><rect x="340" y="140" width="40" height="40" fill="url(#gw)"/><rect x="20" y="180" width="40" height="40" fill="url(#gw)"/><rect x="60" y="180" width="40" height="40" fill="url(#gw)"/><rect x="100" y="180" width="40" height="40" fill="url(#gw)"/><rect x="140" y="180" width="40" height="40" fill="url(#gw)"/><rect x="180" y="180" width="40" height="40" fill="url(#gw)"/><rect x="220" y="180" width="40" height="40" fill="url(#gw)"/><rect x="260" y="180" width="40" height="40" fill="url(#gw)"/><rect x="300" y="180" width="40" height="40" fill="url(#gw)"/><rect x="340" y="180" width="40" height="40" fill="url(#gw)"/><rect x="268" y="68" width="24" height="24" rx="5" fill="none" stroke="#ffc242" stroke-width="3"/><rect x="305" y="105" width="30" height="30" rx="4" fill="rgba(242,77,77,.25)" stroke="#f24d4d" stroke-width="2.5"/><line x1="312.5" y1="109" x2="312.5" y2="131" stroke="#fff" stroke-width="2"/><line x1="320.0" y1="109" x2="320.0" y2="131" stroke="#fff" stroke-width="2"/><line x1="327.5" y1="109" x2="327.5" y2="131" stroke="#fff" stroke-width="2"/><rect x="304" y="144" width="32" height="32" rx="7" fill="url(#gx)" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="320.0" cy="155.0" r="4" fill="#fff"/><path d="M320.0 159.0 v10 M314.0 164.0 h12" stroke="#fff" stroke-width="3" stroke-linecap="round"/><line x1="96.0" y1="80.0" x2="144" y2="80.0" stroke="#f24d4d" stroke-width="5" stroke-linecap="round" opacity=".85"/><rect x="144" y="64" width="32" height="32" rx="6" fill="url(#gc)" stroke="#59607a" stroke-width="2.5"/><rect x="150" y="70" width="20" height="20" rx="3" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5"/><rect x="66" y="66" width="28" height="28" rx="9" fill="#3a4152" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/><rect x="91" y="69.0" width="12" height="9" rx="2" fill="#f24d4d"/><rect x="91" y="82.0" width="12" height="9" rx="2" fill="#4594ff"/><circle cx="75" cy="76" r="4.2" fill="#fff"/><circle cx="86" cy="76" r="4.2" fill="#fff"/><circle cx="76.5" cy="76.5" r="2" fill="#111"/><circle cx="87.5" cy="76.5" r="2" fill="#111"/></svg></div>
+</div>
+
+<section id="how">
+<h2>How to play</h2><p class="sub">You’ll learn it in three steps. The first levels guide you along the way.</p>
+<ol class="steps"><li><b>Walk and turn</b><span>Walk with the arrow pad or by swiping. Use “Turn” mode to change direction without walking.</span></li><li><b>Pull or push</b><span>The magnet pulls the first crate in front of you toward you, or pushes it away. Crates slide until they hit an obstacle.</span></li><li><b>Fill the plates</b><span>When every plate holds a crate, the gate opens. Reach the exit; finish within par to earn 3 stars.</span></li></ol>
+</section>
+
+<section id="features">
+<h2>Features</h2><p class="sub">Simple rules, deep puzzles.</p>
+<div class="grid"><div class="card"><h3>Polar crates</h3><p>Blue crates can only be pulled, red crates can only be pushed. Plan the order carefully.</p></div><div class="card"><h3>Hazards</h3><p>Spikes, orange patrols that move one tile per action, and arrow tiles you can only cross in one direction.</p></div><div class="card"><h3>Room to make mistakes</h3><p>Unlimited undo and restart. Pushing the wrong crate never ends the game.</p></div><div class="card"><h3>Hint system</h3><p>When you’re stuck, it shows the first move of the shortest path from where you stand. One free hint a day; more hints cost coins.</p></div><div class="card"><h3>Stars and par</h3><p>Every level has a par move count. Can you find the perfect solution?</p></div><div class="card"><h3>Landscape, full screen</h3><p>Built for touch: arrow pad, swipe, big Pull and Push buttons, haptics and sound.</p></div></div>
+<div class="band" style="margin-top:16px"><p>Every level was verified with a computer solver: levels are solvable, the exit can only be reached through the gate, and there’s no shortcut around it.</p></div>
+</section>
+
+<!--
+  EKRAN GÖRÜNTÜLERİ / SCREENSHOTS
+  Gerçek ekran görüntülerini aldıktan sonra bu bölümü aç (yorumu kaldır) ve dosya adlarını güncelle.
+  <section id="goruntuler">
+  <h2>Screenshots</h2>
+  <div class="grid">
+    <img src="../images/shot1.png" alt="" style="width:100%;border-radius:14px">
+    <img src="../images/shot2.png" alt="" style="width:100%;border-radius:14px">
+    <img src="../images/shot3.png" alt="" style="width:100%;border-radius:14px">
+  </div>
+  </section>
+-->
+
+<section>
+<h2>Pricing</h2><p class="sub">No ads, no subscription.</p>
+<div class="price">
+<div class="card"><h3>First 10 levels are free</h3><p>Try the game and its mechanics for free. You get one free hint every day.</p></div>
+<div class="card hl"><h3>Full version</h3><p>Unlock every level with a one-time purchase. You can restore it with the same Apple ID.</p></div>
+</div>
+</section>
+
+<section id="faq">
+<h2>Frequently asked questions</h2>
+<details><summary>Is the game free?</summary><p>The first 10 levels are free. A one-time “Full version” purchase unlocks every level. There are no ads and no subscription.</p></details><details><summary>Do I need an internet connection?</summary><p>No, the game plays offline. The internet is only used for purchases and optional iCloud sync.</p></details><details><summary>Will I lose my progress?</summary><p>Your progress is stored on your device. If iCloud is on, your best results sync across your devices and come back even if you reinstall the app.</p></details><details><summary>How do I restore my purchase?</summary><p>Tap “Restore purchases” on the store screen. You need to use the same Apple ID.</p></details><details><summary>Which languages are supported?</summary><p>English and Turkish. The language is chosen automatically from your device settings.</p></details><details><summary>Do you collect data?</summary><p>No. There are no accounts, ads, analytics or tracking. See the Privacy Policy for details.</p></details>
+</section>
+
+<section id="support">
+<h2>Support</h2>
+<p class="sub">For questions, suggestions or bug reports, write to us: <a href="mailto:magnetrixgame@gmail.com">magnetrixgame@gmail.com</a></p>
+</section>
+</div>
+</main>
+<footer><div class="wrap">
+<span>© 2026 Abdullah Gürses</span>
+<span><a href="privacy.html">Privacy Policy</a> · <a href="../tr/">Türkçe</a></span>
+</div></footer>
+</body></html>
